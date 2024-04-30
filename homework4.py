@@ -6,7 +6,7 @@ print(type(immutable_var))
 #   File "C:/Users/danii/Desktop/py/pythonProject/homework4.py", line 5, in <module>
 #     immutable_var[0] = 13
 # TypeError: 'tuple' object does not support item assignment
-# потому что элементы в нутри кортежа не подлежат изменению - можно только добавлять и изменять данные внутри включенных в него списков)
+# потому что элементы в нутри кортежа не подлежат изменению (можно только добавлять и изменять данные внутри включенных в него списков)
 
 mutable_list = ['chin-chopa', 'djArbuz', 123, False, 23.55]
 mutable_list.remove(123)

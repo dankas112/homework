@@ -5,6 +5,8 @@ students_list = list(students)
 a = len(students_list) - 1
 
 students_list.sort()
+students_list.reverse()
+grades.reverse()
 
 while a > -1:
     grades[a] = sum(grades[a]) / len(grades[a])

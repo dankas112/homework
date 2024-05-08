@@ -1,16 +1,15 @@
-random_num = int(input('Enter the random number 3-20: '))
-numbers_x = list(range(1, 21))
-numbers_y = list(range(2, 21))
-answer = []
+random_num = int(input('Enter the random number 3-20: ')) #вводим в программу число с 1й вставки
+numbers_x = list(range(1, 21)) #перебор чисел от 1 до 20 для рассчета 1х чисел в парах для пароля (не изменяется по ходу выполнения программы)
+numbers_y = list(range(2, 21)) #тоже самое только для 2х чисел в парах (изменяется по ходу выполнения программы)
+answer = [] #ответ(подходящие пары чисел будут записываться сюда)
 
-for x in numbers_x:
-    for y in numbers_y:
-        if random_num % (x + y) == 0 and x != y:
-            z = (str(x) + str(y))
-            answer.append(z)
-            if x in numbers_y:
-                numbers_y.remove(x)
+for x in numbers_x: #для каждого числа в пересчете от 1 до 20
+    for y in numbers_y: #и каждого числа от 2 до 20
+        if random_num % (x + y) == 0 and x != y: #если при делении числа с 1й вставки на сумму перечисляемых пар у нас нет остатка, а так же они не равны друг другу
+            z = (str(x) + str(y)) #соединяем их в пару
+            answer.append(z) #добавляем пару в наш ответ
+            if x in numbers_y: #если 1е число есть в пересчете 2х чисел
+                numbers_y.remove(x) #то мы его удаляем, чтобы у нас не было таких же, только перевернутых пар(по типу 69 и 96)
 
-print(answer)
-result = ''.join(answer)
-print(result)
+result = int(''.join(answer)) #убираем все ненужное и соединяем все пары в единое число(пароль)
+print(result) #УРА пароль, теперь мы не умрем тут (ну как минимум от этой ловушки)

@@ -9,11 +9,13 @@ def test(n, *args, hota='under', kek=False, **kwargs):
 test(5, True, 'Инокентий', 'efw', hota='near', basa='фундамент', number='число')
 
 
-def factorial(n, s=0):
-    if n != 0:
-        return n + factorial(n-1)
+def factorial(n):
+    if n < 0:
+        return "невозможно"
+    elif n > 1:
+        return n * factorial(n-1)
     else:
-        return 0
+        return 1
 
 
-print(factorial(10))
+print(factorial(8))
